@@ -20,19 +20,19 @@ def input(events, state):
                 print "q"
                 state = 0
             elif event.key == K_w:
-                print "Forwards"
+                print "Inainte"
                 both.turn(100, 360, False)
             elif event.key == K_s:
-                print "Backwards"
+                print "Inapoi"
                 both.turn(-100, 360, False)
             elif event.key == K_a:
-                print "Left"
+                print "Stanga"
                 leftboth.turn(100, 90, False)
             elif event.key == K_d:
-                print "Right"
+                print "Dreapta"
                 rightboth.turn(100, 90, False)
             elif event.key == K_f:
-                print "Head"
+                print "Schimbare"
                 head.turn(30, 45, False)
             elif event.key == K_r:
                 state = explore(state)
@@ -42,7 +42,7 @@ def input(events, state):
 def explore(state):
     if state == 1:
         state = 2
-        print "Explore"
+        print "Explorare"
     elif state == 2:
         state = 1
         print "Command"
@@ -77,10 +77,10 @@ rightboth = nxt.SynchronizedMotors(right, left, 100)
 head = Motor(brick, PORT_A)
  
 state = 1
-print "Running"
+print "Merge"
 while (state > 0):
     state = input(pygame.event.get(), state)
     #pygame.display.flip()
     state = update(state)
  
-print "Quit"
+print "Renuntare"
